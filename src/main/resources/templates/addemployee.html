@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Employee</title>
+</head>
+<body>
+<h1>Add Employee</h1>
+<form action="#" th:action="@{/employeepayrollservice/create}" th:object="${employee}" method="post">
+    <label>Name:</label>
+    <input type="text" th:field="*{name}" required/>
+    <br>
+    <label>Salary:</label>
+    <input type="number" th:field="*{salary}" required/>
+    <br>
+    <button type="submit">Add Employee</button>
+</form>
+<a href="/employeepayrollservice/employees">Back to Employee List</a>
+</body>
+</html>
