@@ -1,0 +1,34 @@
+<div class="dashboard">
+  <h1>Employee Dashboard</h1>
+
+  <div class="button-container">
+    <button class="add-btn" (click)="navigateToAddPerson()">Add Employee</button>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Salary</th>
+        <th>Gender</th>
+        <th>Start Date</th>
+        <th>Note</th>
+        <th>Departments</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let emp of employees">
+        <td>{{ emp.name }}</td>
+        <td>{{ emp.salary }}</td>
+        <td>{{ emp.gender }}</td>
+        <td>{{ emp.startDate }}</td>
+        <td>{{ emp.note }}</td>
+        <td>{{ emp.departments.join(', ') }}</td>
+        <td>
+          <button class="delete-btn" (click)="deleteEmployee(emp.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

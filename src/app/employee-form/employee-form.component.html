@@ -1,0 +1,33 @@
+<div class="employee-form">
+  <h2>Add Employee</h2>
+  <form (ngSubmit)="onSubmit()">
+    <label>Name:</label>
+    <input type="text" [(ngModel)]="employee.name" required>
+
+    <label>Salary:</label>
+    <input type="number" [(ngModel)]="employee.salary" required>
+
+    <label>Gender:</label>
+    <select [(ngModel)]="employee.gender" required>
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
+    </select>
+
+    <label>Start Date:</label>
+    <input type="date" [(ngModel)]="employee.startDate" required>
+
+    <label>Note:</label>
+    <textarea [(ngModel)]="employee.note"></textarea>
+
+    <label>Profile Picture URL:</label>
+    <input type="text" [(ngModel)]="employee.profilepic">
+
+    <label>Departments:</label>
+    <div *ngFor="let dept of departments">
+      <input type="checkbox" [value]="dept" (change)="updateDepartments($event)">
+      {{ dept }}
+    </div>
+
+    <button type="submit">Submit</button>
+  </form>
+</div>
